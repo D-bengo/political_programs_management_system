@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
-from models.report import Report
+from server.models.report import Report
 from server.config import db
 
 report_bp = Blueprint(
