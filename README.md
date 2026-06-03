@@ -69,17 +69,15 @@
 ## INSTALLATION GUIDE
 ## Backend Setup
 1. Navigate to the Backend Directory
-cd server
+- cd server
 
 2. Install Pipenv
 
 If Pipenv is not installed:
-
-pip install pipenv
+- pip install pipenv
 
 Verify installation:
-
-pipenv --version
+- pipenv --version
 
 3. Create Virtual Environment and Install Dependencies
 pipenv install flask 
@@ -91,11 +89,10 @@ pipenv install flask-cors
 pipenv install python-dotenv
    
 4. Activate the Virtual Environment
-pipenv shell
+- pipenv shell
 
 You should see something similar to:
-
-(server) username@computer:~/project/server$
+- (server) username@computer:~/project/server$
 
 5. Configure Environment Variables
 
@@ -134,6 +131,102 @@ Install additional packages:
 
 Run Application:
 - npm run dev
+
+## System Features
+1. User Management
+Users can register and login securely.
+Fields include:
+    Name
+    Email
+    Password
+    Role
+2. Program Management
+Administrators can:
+    Create programs
+    Update program details
+    Delete programs
+    Assign coordinators
+
+Program information includes:
+    Title
+    Description
+    Venue
+    Region
+    Status
+    Coordinator
+3. Stakeholder Management
+Administrators can:
+    Add stakeholders
+    Update stakeholder information
+    Delete stakeholders
+
+Stakeholder information includes:
+    Name
+    Position
+    County
+    Phone Number
+
+Coordinators can view stakeholder records.
+
+4. Attendance Management
+Administrators can:
+    Mark attendance
+    View attendance records
+
+Attendance includes:
+    Program
+    Stakeholder
+    Attendance Status
+
+Attendance status:
+    Present
+    Absent
+
+Coordinators can view attendance records.
+
+5. Report Management
+Coordinators can submit reports after program activities.
+Report fields include:
+    Summary
+    Recommendations
+    Program ID
+
+Administrators can review all submitted reports.
+
+## Database Relationships
+## One-to-Many Relationships
+- User → Program
+
+One coordinator can manage many programs.
+
+User (1) -------- (M) Program
+
+- Program → Report
+
+One program can have multiple reports.
+
+Program (1) -------- (M) Report
+- Program → Attendance
+
+One program can have multiple attendance records.
+
+Program (1) -------- (M) Attendance
+- Stakeholder → Attendance
+
+One stakeholder can have multiple attendance records.
+
+Stakeholder (1) -------- (M) Attendance
+
+## Many-to-Many Relationship
+- Program ↔ Stakeholder
+
+A program can involve many stakeholders.
+
+A stakeholder can participate in many programs.
+
+This relationship is implemented through the Attendance table.
+
+Program ---- Attendance ---- Stakeholder
 
 ## Author
 - Denis Walubengo
