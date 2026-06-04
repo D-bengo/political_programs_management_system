@@ -25,15 +25,11 @@ def create_app():
 
     # ✅ FIXED CORS (NO TYPOS, NO MISTAKES)
     CORS(
-        app,
-        resources={
-            r"/*": {
-                "origins": [
-                    "https://political-programs-management-system-k9y7h4u32.vercel.app"
-                ]
-            }
-        },
-        supports_credentials=False
+    app,
+    resources={r"/*": {"origins": "*"}},
+    supports_credentials=False,
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     )
 
     app.register_blueprint(auth_bp)
