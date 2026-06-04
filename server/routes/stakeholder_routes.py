@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from server.models.stakeholder import Stakeholder
-from server.models.user import User
-from server.config import db
+from models.stakeholder import Stakeholder
+from models.user import User
+from config import db
 
 stakeholder_bp = Blueprint(
     "stakeholder_bp",

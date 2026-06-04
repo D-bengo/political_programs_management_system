@@ -1,4 +1,4 @@
-from server.config import db
+from config import db
 
 
 class Attendance(db.Model):

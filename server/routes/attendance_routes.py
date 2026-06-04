@@ -1,8 +1,8 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from server.models.attendance import Attendance
-from server.models.user import User
-from server.config import db
+from models.attendance import Attendance
+from models.user import User
+from config import db
 
 attendance_bp = Blueprint(
     "attendance_bp",

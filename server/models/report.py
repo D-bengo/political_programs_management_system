@@ -1,4 +1,4 @@
-from server.config import db
+from config import db
 
 
 class Report(db.Model):

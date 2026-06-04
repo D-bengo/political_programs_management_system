@@ -3,17 +3,17 @@ from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 
-from server.config import Config, db
+from config import Config, db
 
 # IMPORTANT: import models so Flask-Migrate can detect them
-from server.models import User, Program, Stakeholder, Attendance, Report
+from models import User, Program, Stakeholder, Attendance, Report
 
 # Import Blueprints (VERY IMPORTANT - you were missing this)
-from server.routes.auth_routes import auth_bp
-from server.routes.program_routes import program_bp
-from server.routes.stakeholder_routes import stakeholder_bp
-from server.routes.attendance_routes import attendance_bp
-from server.routes.report_routes import report_bp
+from routes.auth_routes import auth_bp
+from routes.program_routes import program_bp
+from routes.stakeholder_routes import stakeholder_bp
+from routes.attendance_routes import attendance_bp
+from routes.report_routes import report_bp
 
 
 def create_app():
