@@ -30,7 +30,17 @@ def create_app():
 
     jwt = JWTManager(app)
 
-    CORS(app)
+    CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": [
+                "https://political-programs-management-syste.vercel.app"
+            ]
+        }
+    },
+    supports_credentials=True
+)
 
     # Register Blueprints
     app.register_blueprint(auth_bp)
