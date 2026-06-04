@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:5555",
+  baseURL: "https://political-programs-management-system-1.onrender.com",
+  withCredentials: true,
 });
 
 api.interceptors.request.use((config) => {
